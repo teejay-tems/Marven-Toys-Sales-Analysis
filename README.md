@@ -101,7 +101,7 @@ Establishing connections between the tables is essential to this analysis. In ad
 ![](Data_Rshp.png)
 Relationships make it possible for queries to use JOIN operations, which combines and retrieves data from several tables in a single query. This results in a more streamlined and effective data retrieval process. Relationships help prevent information from being duplicated in multiple tables, improve storage efficiency, and simplify database maintenance. The relationships between various database entities are clearly shown by relationships. This helps with efficient data modeling and improves the database structure's readability.
 
-**_For the complete data cleaning documentation_**, _Click Here_😄
+**_For the complete data cleaning documentation_**, _Click Here_
 
 ## Data Analysis and Insight
 
@@ -196,38 +196,44 @@ ORDER BY	Store_Location
 To obtain important insights into the changing behaviors, trends, and general patterns within the dataset over time, a comprehensive time-based analysis was carried out to find seasonal trends or patterns in the sales data. For this project, a sophisticated understanding of the intricate behaviors and fluctuations within the sales data throughout different years was made possible by the execution of a comprehensive SQL query intended to calculate the total revenue for each month across different years.
 ```
 -- Revenue Trend Over Time
-With CTE
-AS(SELECT
-    Month_Name,
-	[Month No],
-    CASE WHEN [2022] IS NULL THEN 0 ELSE [2022] END AS [2022],
-    CASE WHEN [2023] IS NULL THEN 0 ELSE [2023] END AS [2023]
 
-FROM 
-       ( SELECT  Month_Name,
-		[Month No],
-        [Year],
-		ROUND(SUM(Product_Profit * Sales.Units),0) AS Revenue
-FROM Sales
-        JOIN products
-        ON Products.Product_ID = sales.Product_ID
-JOIN
-Stores
-        ON Sales.Store_ID = stores.Store_ID
-GROUP BY Month_Name,
-         [Month No],
-		 [Year]) AS Y
-
-PIVOT(  SUM(Revenue)
-      FOR [Year]
-		IN ( [2022], [2023])) AS PIVOT_Col)
 SELECT		Month_Name,
-		[2022],
-		[2023],
-		Concat(ISNULL(ROUND((([2023]-[2022])/NULLIF([2022],0))*100,2),0),'%')AS [% Change_In_Revenue]
-FROM 		CTE
-ORDER BY  [Month No]
+		CASE WHEN [2022] IS NULL THEN 0 ELSE [2022] END AS [2022],
+		CASE WHEN [2023] IS NULL THEN 0 ELSE [2023] END AS [2023]
+FROM
+(SELECT 	Month_Name,
+		 [Month No],
+		[Year],
+		ROUND(SUM(Product_Price*Sales.Units), 0) AS Revenue
+FROM	 	Products
+JOIN	  	Sales
+ON	 	Products.Product_ID = Sales.Product_ID
+JOIN	  	Stores
+ON	  	Stores.Store_ID = Sales.Store_ID
+GROUP BY 	Month_Name,
+		 [Month No],
+		[Year]) AS Y
+PIVOT(		SUM(Revenue)
+		FOR [Year]
+		IN ( [2022], [2023])) AS PIV_
+ORDER BY 	 [Month No]
+
 ```
+|Month_Name|2022|2023|
+|--------------|-----------------|--------------|
+|January|542555|747196|
+|February|541352|722632|
+|March|589485|883516|
+|April|681073|827691|
+|May|672370|825319|
+|June|661980|808299|
+|July|556034|828349|
+|August|489423|660877|
+|September|585844|658194|
+|October|623874|0|
+|November|661304|0|
+|December|877204|0|
+
 The revenue generated for each month, comparing 2022 to 2023, provides insights into the performance of each period:
 #### in 2022
 - There is a general revenue growth from January to December, peaking at $877,204 in December. This suggests that consumer participation and spending have been favorable this year.
@@ -345,6 +351,10 @@ FROM inventory
 	   JOIN Products
 ON products.Product_ID = inventory.Product_ID
 ```
+|Money_Tied_In_Inventory|
+|-------------------|
+|300210|
+
 - Based on the analysis above, $300,210 is the amount of money that toy stores have tied up in inventory, which indicates that the entire value of the products in toy stores' inventory is $300,210.  This amount represents the capital invested in purchasing those products, and it is currently tied up in the form of inventory.
   
 The average time it takes for toy stores to sell out and replace all their inventory is examined in the second section of the question.  This was calculated by first calculating the total quantity of products currently in stock. Subsequently, this total quantity is divided by the average unit of product sold per day.  This calculation helps ascertain how many days the toy stores require, on average, to sell out of their current stock and get new stock.
