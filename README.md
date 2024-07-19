@@ -38,16 +38,16 @@ The insights gained from the analysis of Maven Toys sales can assist multiple st
 Executives and upper management can use the analysis to make informed decisions about product offerings, store locations, and overall business strategy.
 
 ### 2.	Sales Teams: 
-Based on the analysis, sales teams can identify possible opportunities for growth and gain insight into popular products, customer preferences, and sales trends.
+Based on the analysis, sales teams can identify possible opportunities for growth, Sales team optimization in consideration of productivity, and gain insight into popular products, customer preferences, and sales trends.
 
 ### 3.	Inventory managers: 
-By using the analysis, those in charge of inventory can improve stocking plans, spot slow-moving goods, and lower the frequency of stockouts.
+By using the analysis, those in charge of inventory can improve retail sales inventory stocking plans, spot slow-moving goods, and lower the frequency of stock-outs.
 
 ### 4.	Marketing Teams:
-By utilizing the analysis, marketing teams can align their marketing efforts with the most profitable product categories and customize promotional strategies, particularly during peak seasons.
+By utilizing the analysis, marketing teams can align their marketing campaigns with the most profitable product categories and customize promotional strategies, particularly during peak seasons.
 
-### 5.	Store managers 
-Store managers can enhance their individual store operations by utilizing inventory management strategies, seasonal trends, and insights into product performance.
+### 5.	Store managers:
+Store managers can enhance their individual store operations by utilizing inventory management strategies, ensuring proper brand visibility at the stores for top selling products, seasonal trends, and insights into product performance.
 
 ## Skills/ Concepts Demonstrated
 The following SQL featuresbwere incorporated:
