@@ -5,17 +5,17 @@
 This is a SQL project that aims to provide **Maven Toys**, a fictional chain of toy stores in Mexico, with actionable insights into product profitability, seasonal sales trends, stock outs impact, and inventory efficiency.
 
 ## Table Of Content
-- Project Overview
-- Project Scope
-- Business Objective
-- Document Purpose
-- Use Case
-- Skills Demonstrated
-- Data Source
-- Data Cleaning and Processing
-- Data Analysis and Insight
-- Recommendation
-- Conclusion
+- [Project Overview](https://github.com/teejay-tems/Marven-Toys-Sales-Analysis/tree/main?tab=readme-ov-file#project-overview)
+- [Project Scope](https://github.com/teejay-tems/Marven-Toys-Sales-Analysis/tree/main?tab=readme-ov-file#project-scope)
+- [Business Objective](https://github.com/teejay-tems/Marven-Toys-Sales-Analysis/tree/main?tab=readme-ov-file#business-objective)
+- [Document Purpose](https://github.com/teejay-tems/Marven-Toys-Sales-Analysis/tree/main?tab=readme-ov-file#document-purpose)
+- [Use Case](https://github.com/teejay-tems/Marven-Toys-Sales-Analysis/tree/main?tab=readme-ov-file#use-case)
+- [Skills/Concepts Demonstrated](https://github.com/teejay-tems/Marven-Toys-Sales-Analysis/tree/main?tab=readme-ov-file#skills-concepts-demonstrated)
+- [Data Source](https://github.com/teejay-tems/Marven-Toys-Sales-Analysis/tree/main?tab=readme-ov-file#data-source)
+- [Data Cleaning and Processing](https://github.com/teejay-tems/Marven-Toys-Sales-Analysis/tree/main?tab=readme-ov-file#data-cleaning-and-processing)
+- [Data Analysis and Insight](https://github.com/teejay-tems/Marven-Toys-Sales-Analysis/tree/main?tab=readme-ov-file#data-analysis-and-insight)
+- [Recommendation](https://github.com/teejay-tems/Marven-Toys-Sales-Analysis/tree/main?tab=readme-ov-file#recommendation)
+- [Conclusion](https://github.com/teejay-tems/Marven-Toys-Sales-Analysis/tree/main?tab=readme-ov-file#conclusion)
 
 ## Project Overview
 The objective of the Maven Toy Sales and Inventory Analysis project is to offer practical insights regarding product profitability, seasonal sales patterns, the impact of stockouts, and inventory efficiency to Maven Toys, a fictitious chain of toy stores in Mexico.
@@ -34,23 +34,23 @@ This documentation serves as a guide for project stakeholders, providing insight
 ## Use Case
 The insights gained from the analysis of Maven Toys sales can assist multiple stakeholders. The following important parties may find this analysis useful and advantageous.
 
-### 1.	Maven Toys Executives and Management:
+ **1.	Maven Toys Executives and Management:**
 Executives and upper management can use the analysis to make informed decisions about product offerings, store locations, and overall business strategy.
 
-### 2.	Sales Teams: 
+ **2.	Sales Teams:**
 Based on the analysis, sales teams can identify possible opportunities for growth, Sales team optimization in consideration of productivity, and gain insight into popular products, customer preferences, and sales trends.
 
-### 3.	Inventory managers: 
+ **3.	Inventory managers:** 
 By using the analysis, those in charge of inventory can improve retail sales inventory stocking plans, spot slow-moving goods, and lower the frequency of stock-outs.
 
-### 4.	Marketing Teams:
+**4.	Marketing Teams:**
 By utilizing the analysis, marketing teams can align their marketing campaigns with the most profitable product categories and customize promotional strategies, particularly during peak seasons.
 
-### 5.	Store managers:
+**5.	Store managers:**
 Store managers can enhance their individual store operations by utilizing inventory management strategies, ensuring proper brand visibility at the stores for top selling products, seasonal trends, and insights into product performance.
 
 ## Skills/ Concepts Demonstrated
-The following SQL featuresbwere incorporated:
+The following SQL features were incorporated:
 - Data Connection in Microsoft SQL Server
 - Data Cleaning and Processing
 - Developed a Database Schema
@@ -60,7 +60,7 @@ The following SQL featuresbwere incorporated:
 - SQL Window Functions
 
 - ## Data Source
-The project utilizes a dataset containing information on sales and inventory. The dataset used for this analysis was downloaded from **check**  website where datasets are available for practice purposes. The dataset is a CSV file, and it consists of four main tables which are sales table, product table, inventory table, and store table.
+The project utilizes a dataset containing information on sales and inventory. The dataset used for this analysis was downloaded from [Mavin Analytics](https://www.mavenanalytics.io/data-playground?page=9&pageSize=5)  website where datasets are available for practice purposes. The dataset is a CSV file, and it consists of four main tables which are sales table, product table, inventory table, and store table.
 
 The product table, which has 35 rows and 5 columns, contains information about the goods that Maven Toys sells. The table contains details about each product, including its name, category, cost, and price. Each product is uniquely identified by its Product ID.
 The inventory table shows the current stock levels of every product in every store. It has 1,593 rows and 3 columns. The columns include Product ID, Store ID, and Stock on Hand.
@@ -72,27 +72,27 @@ Data cleaning is necessary because the accuracy and dependability of the input d
 
 For each table used in the analysis, extensive data cleaning procedures were carried out. For every table, the following steps were taken to guarantee high data accuracy and integrity and to improve the dataset's high quality.
 
-### 1. Correcting Data Types:
+**1. Correcting Data Types:**
 
 Ensured that data types are appropriate for the values in each column, converting datatype if needed.
 
-### 2. Recognizing and Managing Null Values:
+**2. Recognizing and Managing Null Values:**
 Extensive checks were conducted to detect and manage any occurrences of null values on the primary columns in every table. In this dataset, null values denote missing or insufficient data. Therefore, by guaranteeing that every observation contains all relevant information, addressing rows with null values helps maintain the dataset's overall integrity. Results from incomplete data analysis can be deceptive.
 
 Upon executing a query to identify null values in each table, the output indicates that every table involved in this analysis contains complete information. Importantly, there are no instances of null values detected in the key columns across all tables, highlighting the completeness and data integrity of the dataset used for this analysis.
 
-### 3. Handling Duplicates:
+**3. Handling Duplicates:**
 
 Duplicate records were found and eliminated to prevent redundancy and preserve data integrity.
 
 After running a query to find and remove all duplicate rows in each table, it has been confirmed that every table used in this analysis is free of duplicate rows. Each row in these tables contains unique information, ensuring the integrity of the dataset and providing distinct and valuable data for the analysis.
 
-### 4. Standardizing Data: 
+**4. Standardizing Data:**
 
 Ensuring uniformity in data representation and format, including text case and date formats. 
 
 During the data processing phase, the following procedures were also completed.
-- #### Added a new column
+ - #### Added a new column
 A new column called "product profit" was added to the product table, calculating the profit for each product.  This column is essential for determining which product category is profitable, as it offers insightful information about the most lucrative product categories.
 
 New columns were also added to the sales table. These are Weekday, Month Number, Month Name, and Year, these additions are crucial for a thorough look at sales trends. Businesses can quickly identify trends with these columns, such as which days, months, or years have higher sales. Making informed decisions about product inventory management, promotion scheduling, and general business strategy is made easier with the use of this information.
@@ -114,7 +114,7 @@ This analysis provides answers to the following questions.
 This question is seeking to understand the relationship between product categories, profitability, and potential variations across different store locations. 
 Finding and ranking the product categories that make a substantial contribution to the business's overall profitability is the aim of the first section of the question. To answer this query, a comprehensive SQL query was run to determine the total profit that was made by each product category as well as the percentage that each category contributed to the overall profit. This query provides a comprehensive overview of the profitability distribution across product categories.
 
-```
+```SQL
 --Profit by Product Category
 SELECT	Product_Category,
         SUM(Product_Profit * Sales.Units) AS Total_Profit,
@@ -145,7 +145,7 @@ Profits from Games and Sports & Outdoors were $673,993 and $505,718, respectivel
   
 The second part of the question explores whether the profitability of product categories remains consistent or varies across different store locations. It suggests an investigation into whether certain product categories perform exceptionally well in specific stores or if the profitability distribution is uniform across all locations. To provide answers to the second part of the question, a comprehensive SQL query that calculates the total profit generated by each product category across different store locations was executed.
 
-```
+```SQL
 --Profit by Product Category and Store Location
 WITH CTE
 AS
@@ -194,7 +194,7 @@ ORDER BY	Store_Location
 
 ### 2. Can you find any seasonal trends or patterns in the sales data?
 To obtain important insights into the changing behaviors, trends, and general patterns within the dataset over time, a comprehensive time-based analysis was carried out to find seasonal trends or patterns in the sales data. For this project, a sophisticated understanding of the intricate behaviors and fluctuations within the sales data throughout different years was made possible by the execution of a comprehensive SQL query intended to calculate the total revenue for each month across different years.
-```
+```SQL
 -- Revenue Trend Over Time
 
 SELECT		Month_Name,
@@ -274,7 +274,7 @@ All of these contribute to evaluating the influence of out-of-stock products on 
 ##### **_Note_**: 
 Sales table contain some certain products but these products are not listed in the inventory table, therefore, they are categorized as unavailable products. Despite their absence from the inventory table, these products play a crucial role in this analysis. Their inclusion is essential for calculating the total revenue lost during stock out.
 
-```
+```SQL
 --This Query Assesses the Impact of Out-of-Stock Product on Overall Sales in Each Store Location.
 WITH 
 
@@ -343,10 +343,10 @@ ORDER BY 	Store_Location
   ### 4. How much money is tied up in inventory at the toy stores? How long will it last?
 This entails calculating the average time it takes to sell and replace the inventory in Maven Toys stores as well as analyzing the financial resources that are currently allocated to it.
 The purpose of the first section of the question is to determine the total monetary value of the goods and toys that the toy stores currently have in stock. An SQL query that multiplies the cost per unit of each individual product by the corresponding quantity in stock was run to answer the first part of the question. This query provides a thorough valuation of the inventory.
-```
+```SQL
 -- Total monetary value
 SELECT 
-       Round(Sum(inventory.Stock_On_Hand * products.Product_Cost),0) AS Money_Tied_In_Inventory
+           Round(Sum(inventory.Stock_On_Hand * products.Product_Cost),0) AS Money_Tied_In_Inventory
 FROM inventory
 	   JOIN Products
 ON products.Product_ID = inventory.Product_ID
@@ -359,7 +359,7 @@ ON products.Product_ID = inventory.Product_ID
   
 The average time it takes for toy stores to sell out and replace all their inventory is examined in the second section of the question.  This was calculated by first calculating the total quantity of products currently in stock. Subsequently, this total quantity is divided by the average unit of product sold per day.  This calculation helps ascertain how many days the toy stores require, on average, to sell out of their current stock and get new stock.
 
-```
+```SQL
 --Average Number of Days it Takes for the Toy Stores to Sell and Replace their Entire Inventory
 
 WITH 
@@ -411,7 +411,7 @@ This is a positive indicator of efficient operations and responsiveness to marke
 ## Conclusion
 The detailed analysis of Maven Toys' sales and inventory data yields vital insights for strategic decision-making. Identifying profitable product categories, recognizing seasonal trends, addressing out-of-stock impacts, and optimizing inventory turnover pave the way for proactive responses to market dynamics. In the vibrant Mexican toy retail market, this puts Maven Toys in a strong position for long-term success.
 
-**_Thank You_**
+**_Thank You_**😄
 
 ---
 I am interested in a Data Analyst role in an organization where I can showcase my skills, take more responsibilities, continue to learn, an organization that I can grow with, where my work will be highly beneficial to the organization.
