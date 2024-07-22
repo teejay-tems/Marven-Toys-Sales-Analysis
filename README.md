@@ -101,7 +101,7 @@ Establishing connections between the tables is essential to this analysis. In ad
 ![](Data_Rshp.png)
 Relationships make it possible for queries to use JOIN operations, which combines and retrieves data from several tables in a single query. This results in a more streamlined and effective data retrieval process. Relationships help prevent information from being duplicated in multiple tables, improve storage efficiency, and simplify database maintenance. The relationships between various database entities are clearly shown by relationships. This helps with efficient data modeling and improves the database structure's readability.
 
-**_For the complete data cleaning documentation_**, _Click Here_
+**_For the complete data cleaning documentation_**, [_Click Here_](https://github.com/teejay-tems/Marven-Toys-Sales-Analysis/blob/main/Maven_Toys_Sales_Cleaning_Processing_Doc.pdf)
 
 ## Data Analysis and Insight
 
